@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Food Banks | UK Food Bank Info</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Leaflet styles -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-o4dWYLz7eoXcUX3Cqo8ZYM31X0Udnzrx3nE1F+xy3YM="
+        crossorigin=""
+    />
+    <style>
+        /* Additional page specific styles */
+        #map {
+            height: 600px;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .controls input,
+        .controls select {
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>UK Food Bank Information</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="map.html" class="active">Find Food Banks</a>
+            <a href="charities.html">Food Charities</a>
+            <a href="schemes.html">Support Schemes</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Find a Food Bank Near You</h2>
+        <div class="controls">
+            <input type="text" id="searchBox" placeholder="Search by name, town or postcode" aria-label="Search for a food bank">
+            <select id="networkFilter" aria-label="Filter by network">
+                <option value="All">All networks</option>
+                <option value="Trussell">Trussell Trust</option>
+                <option value="Independent">Independent</option>
+                <option value="IFAN">IFAN</option>
+            </select>
+        </div>
+        <div id="map"></div>
+    </main>
+    <footer>
+        <p>&copy; 2025 UK Food Bank Information. Data courtesy of the Give Food project.</p>
+    </footer>
+    <!-- Leaflet JS -->
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-QMmtIum4Y4S6vQK7D1Vdgg2TxS+y8JLZLkP56XICtkQ="
+        crossorigin=""
+    ></script>
+    <!-- Map logic -->
+    <script src="js/map.js"></script>
+</body>
+</html>
